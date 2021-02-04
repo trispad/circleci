@@ -6,7 +6,9 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run: docker run hello-world
+      - run: |
+        echo "${DOCKER_PASS}" | docker login --user "${DOCKER_USER}" --password-stdin
+        docker run trispad/circleci-test:latest
 
 # Use a package of configuration called an orb.
 #orbs:
@@ -18,4 +20,6 @@ jobs:
 #  welcome:
     # Run the welcome/run job in its own container
 #    jobs:
+#
+
 #      - welcome/run
