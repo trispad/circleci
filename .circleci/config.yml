@@ -7,8 +7,8 @@ jobs:
     steps:
       - checkout
       - run: |
-        echo "${DOCKER_PASS}" | docker login --user "${DOCKER_USER}" --password-stdin
-        docker run trispad/circleci-test:latest
+          echo "${DOCKER_PASS}" | docker login --user "${DOCKER_USER}" --password-stdin
+          docker run trispad/circleci-test:latest
 
 # Use a package of configuration called an orb.
 #orbs:
