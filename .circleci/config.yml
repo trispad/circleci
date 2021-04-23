@@ -3,8 +3,12 @@ version: 2.1
 
 jobs:
   build:
-    machine: true
+    docker:
+      - image: alpine:latest
     steps:
+      - run:
+          name: Install Docker client
+          command: apk add docker-cli
       - checkout
       - setup_remote_docker:
           version: 19.03.13
