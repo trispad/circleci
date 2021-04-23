@@ -24,6 +24,17 @@ jobs:
           username: ${DOCKER_USER}
           password: ${DOCKER_PASS}
     steps:
+      - run: |
+          ls *
+          cat Dockerfile
+          date
+  deploy:
+    docker:
+      - image: trispad/circleci-test:latest
+        auth:
+          username: ${DOCKER_USER}
+          password: ${DOCKER_PASS}
+    steps:
       - checkout
       - run: |
           ls *
@@ -36,6 +47,9 @@ workflows:
       - test:
           requires: 
             - build
+      - deploy:
+          requires:
+            - test
 
 # Use a package of configuration called an orb.
 #orbs:
