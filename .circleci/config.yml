@@ -22,13 +22,13 @@ jobs:
           password: ${DOCKER_PASS}
     steps:
       - checkout
-      - run: ls *
+#      - run: ls *
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
-      - test
+#      - test
 
 # Use a package of configuration called an orb.
 #orbs:
