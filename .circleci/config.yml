@@ -32,7 +32,8 @@ workflows:
   build_and_test:
     jobs:
       - test
-        requires: build
+          requires: 
+            - build
 
 # Use a package of configuration called an orb.
 #orbs:
