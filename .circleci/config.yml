@@ -27,8 +27,8 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      -build
-      -test
+      - build
+      - test
 
 # Use a package of configuration called an orb.
 #orbs:
