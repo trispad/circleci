@@ -34,11 +34,6 @@ jobs:
         auth:
           username: ${DOCKER_USER}
           password: ${DOCKER_PASS}
-    steps:
-      - checkout
-      - run: |
-          ls *
-          date
 workflows:
   version: 2
   build_and_test:
